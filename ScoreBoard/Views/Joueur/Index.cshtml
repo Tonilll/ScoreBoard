@@ -1,1 +1,39 @@
 ﻿@*Cette vue doit afficher la liste des joueurs*@
+
+@model IEnumerable<ScoreBoard.Models.Joueur>
+
+@{
+    Layout = "_Layout";
+}
+
+<h1>Liste</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Identifiant</th>
+            <th>Nom</th>
+            <th>Prénom</th>
+            <th>Équipe</th>
+            <th>Téléphone</th>
+            <th>Courriel</th>
+            <th>Jeux</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var joueur in Model)
+        {
+           <tr>
+               <td>@joueur.Id</td>
+               <td>@joueur.Nom</td>
+               <td>@joueur.Prenom</td>
+               <td>@joueur.Equipe</td>
+               <td>@joueur.Telephone</td>
+               <td>@joueur.Courriel</td>
+               <td>@joueur.Jeux</td>
+            </tr>
+        }
+        
+    </tbody>
+</table>

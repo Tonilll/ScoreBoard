@@ -5,9 +5,16 @@ namespace ScoreBoard.Controllers
 {
     public class JoueurController : Controller
     {
-        public JoueurController()
-        {
+        private IJoueurRepository _Joueurs;
 
+        public JoueurController(IJoueurRepository Joeurs)
+        {
+            _Joueurs = Joeurs;
+        }
+
+        public IActionResult Index()
+        {
+            return View(_Joueurs.ListeJoueurs);
         }
     }
 }
